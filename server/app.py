@@ -65,6 +65,7 @@ def manage_restaurant_pizzas():
         db.session.add(new_restaurantpizza)
         db.session.commit()
         return jsonify(new_restaurantpizza.to_dict()), 201
+    return jsonify({"error":"Failed to create a new pizza restaurant"}), 400
 
 if __name__ == "__main__":
     app.run(port=5555, debug=True)
